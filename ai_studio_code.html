@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gurutattva - Dhyansthali Navsari Registration</title>
+
+  <!-- Tailwind CSS & Icons -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Google Fonts: Heritage Serif & Modern Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --brand-brown: #6b5a3e;
+      --brand-blue: #8ecae6;
+      --brand-orange: #d35400;
+    }
+
+    body { 
+      font-family: 'Plus Jakarta Sans', sans-serif; 
+      background: url('background.jpg') center center no-repeat fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+    }
+
+    .serif-title { font-family: 'Cinzel', serif; }
+
+    /* Main Unified Container: 30% Transparency */
+    .main-unified-box {
+      background: rgba(255, 255, 255, 0.3); /* 30% Transparent */
+      backdrop-filter: blur(15px); /* Strong blur for readability */
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Inner Cards: Slightly more opaque for input clarity */
+    .inner-card {
+      background: rgba(255, 255, 255, 0.7); 
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .input-wrapper {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1.5px solid #e5e7eb;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+    .input-wrapper:focus-within {
+      border-color: var(--brand-brown);
+      background: #ffffff;
+      box-shadow: 0 0 0 4px rgba(107, 90, 62, 0.1);
+    }
+
+    .field-label {
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #71717a;
+      margin-bottom: 4px;
+    }
+
+    .btn-submit {
+      background: var(--brand-brown);
+      transition: all 0.3s ease;
+    }
+    .btn-submit:hover {
+      background: #4a3f2d;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body class="min-h-screen py-10 px-4 flex justify-center items-start">
+
+  <!-- THE SINGLE UNIFIED BOX -->
+  <div class="main-unified-box w-full max-w-3xl rounded-[3rem] overflow-hidden flex flex-col">
+    
+    <!-- 1. Header Section -->
+    <header class="p-8 sm:p-12 flex flex-col sm:flex-row items-center gap-8 border-b border-white/20">
+      <img src="logo.png" alt="Logo" class="h-24 w-auto drop-shadow-md">
+      <div class="text-center sm:text-left">
+        <h1 class="serif-title text-3xl font-bold tracking-tight text-[#2d271e]">Dhyansthali Navsari</h1>
+        <p class="text-xs font-bold text-stone-700 uppercase tracking-[0.2em] mt-2">
+          A Meditation Sanctuary <span class="text-[#5ba4c4] mx-1">|</span> Arabian Sea 🌊
+        </p>
+      </div>
+    </header>
+
+    <!-- 2. Form Section -->
+    <main class="p-6 sm:p-10 flex-1">
+      <form id="registrationForm" class="space-y-8">
+        
+        <!-- Date Card -->
+        <div class="inner-card p-6">
+          <div class="field-label">Planned Visit Date</div>
+          <div class="input-wrapper px-4 py-3">
+            <input type="date" id="visitDate" required class="w-full bg-transparent outline-none text-stone-800 font-semibold">
+          </div>
+        </div>
+
+        <!-- Visitor 1 -->
+        <div class="inner-card p-6 border-l-4 border-[#6b5a3e]">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="h-8 w-8 rounded-full bg-[#6b5a3e] text-white flex items-center justify-center font-bold text-sm">1</div>
+            <h3 class="serif-title font-bold text-stone-800">Primary Visitor</h3>
+          </div>
+
+          <div class="grid grid-cols-1 gap-5">
+            <div>
+              <div class="field-label">Mobile Number</div>
+              <div class="flex gap-2">
+                <div class="flex items-center gap-2 px-3 py-3 input-wrapper">
+                  <img src="https://flagcdn.com/w40/in.png" class="w-5 shadow-sm">
+                  <span class="font-bold text-stone-500 text-sm">+91</span>
+                </div>
+                <div class="input-wrapper flex-1 px-4 py-3">
+                  <input type="tel" id="phone" placeholder="Mobile Number" required class="w-full bg-transparent outline-none">
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="field-label">Full Name</div>
+              <div class="input-wrapper px-4 py-3">
+                <input type="text" id="fullName" placeholder="Full name as per ID" required class="w-full bg-transparent outline-none">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <div class="field-label">Email</div>
+                <div class="input-wrapper px-4 py-3">
+                  <input type="email" id="email" placeholder="email@address.com" required class="w-full bg-transparent outline-none">
+                </div>
+              </div>
+              <div>
+                <div class="field-label">Age</div>
+                <div class="input-wrapper px-4 py-3">
+                  <input type="number" id="age" placeholder="Age" required class="w-full bg-transparent outline-none">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Members Container -->
+        <div id="membersContainer" class="space-y-6"></div>
+
+        <!-- Add Button -->
+        <button type="button" id="addMemberBtn" class="w-full py-4 rounded-2xl border-2 border-dashed border-white/60 text-stone-800 font-bold text-sm flex items-center justify-center gap-2 hover:bg-white/20 transition-all">
+          <i class="fa-solid fa-plus-circle"></i> Add Family Member
+        </button>
+
+        <!-- Submit Button -->
+        <button type="submit" id="submitBtn" class="btn-submit w-full py-5 text-white font-bold text-lg rounded-2xl flex items-center justify-center gap-3 mt-10">
+          <span>SUBMIT</span>
+          <i class="fa-solid fa-paper-plane text-sm opacity-70"></i>
+        </button>
+      </form>
+    </main>
+
+    <!-- 3. Footer Section -->
+    <footer class="bg-black/20 p-10 text-white border-t border-white/10">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        <div>
+          <h4 class="serif-title text-xs font-bold text-[#8ecae6] tracking-[0.2em] mb-3">Location</h4>
+          <p class="text-xs leading-relaxed text-stone-200">
+            Samarpan Ashram Marg, Dandi-Onjal Road,<br>
+            Dandi, Gujarat 396412.
+          </p>
+        </div>
+        <div>
+          <h4 class="serif-title text-xs font-bold text-[#8ecae6] tracking-[0.2em] mb-3">Connect</h4>
+          <div class="text-xs space-y-2 text-stone-200 font-medium">
+            <p><i class="fa-solid fa-phone-volume mr-2 text-[#8ecae6]"></i> 9824330246</p>
+            <p><i class="fa-solid fa-envelope mr-2 text-[#8ecae6]"></i> dhyansthalinavsari@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx11gkiVOS8G0imymHIQ3b-0VavqPRLQfwcurAyBnF2yAfDgUlnLHZKM7xyMUQh3Mpe/exec";
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const addBtn = document.getElementById('addMemberBtn');
+      const container = document.getElementById('membersContainer');
+      let memberCount = 1;
+
+      // Handle Visit Date (Min: Tomorrow)
+      const dateInp = document.getElementById('visitDate');
+      const tmrw = new Date();
+      tmrw.setDate(tmrw.getDate() + 1);
+      dateInp.min = tmrw.toISOString().split('T')[0];
+
+      // Dynamic Card Creation
+      addBtn.onclick = () => {
+        memberCount++;
+        const div = document.createElement('div');
+        div.className = "inner-card p-6 relative animate-in fade-in slide-in-from-top-4 duration-300";
+        div.innerHTML = `
+          <button type="button" onclick="this.parentElement.remove()" class="absolute top-4 right-4 text-stone-400 hover:text-rose-500">
+            <i class="fa-solid fa-circle-xmark text-xl"></i>
+          </button>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="h-8 w-8 rounded-full bg-stone-200 text-stone-600 flex items-center justify-center font-bold text-sm">${memberCount}</div>
+            <h3 class="serif-title font-bold text-stone-800">Visitor ${memberCount}</h3>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+             <div class="sm:col-span-2">
+                <div class="field-label">Full Name</div>
+                <div class="input-wrapper px-4 py-3"><input type="text" placeholder="Visitor Name" required class="w-full bg-transparent outline-none"></div>
+             </div>
+             <div>
+                <div class="field-label">Mobile</div>
+                <div class="input-wrapper px-4 py-3"><input type="tel" placeholder="Mobile" required class="w-full bg-transparent outline-none"></div>
+             </div>
+             <div>
+                <div class="field-label">Age</div>
+                <div class="input-wrapper px-4 py-3"><input type="number" placeholder="Age" required class="w-full bg-transparent outline-none"></div>
+             </div>
+          </div>
+        `;
+        container.appendChild(div);
+      };
+
+      // Form Handling
+      const form = document.getElementById('registrationForm');
+      form.onsubmit = async (e) => {
+        e.preventDefault();
+        const btn = document.getElementById('submitBtn');
+        btn.disabled = true;
+        btn.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i> Submitting...`;
+
+        const members = Array.from(container.children).map(card => {
+          const inps = card.querySelectorAll('input');
+          return { name: inps[0].value, phone: inps[1].value, age: inps[2].value };
+        });
+
+        const payload = {
+          visitDate: document.getElementById('visitDate').value,
+          fullName: document.getElementById('fullName').value,
+          phone: document.getElementById('phone').value,
+          email: document.getElementById('email').value,
+          age: document.getElementById('age').value,
+          members: members
+        };
+
+        try {
+          await fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', cache: 'no-cache', body: JSON.stringify(payload) });
+          alert('Registration Successful!');
+          window.location.reload();
+        } catch (err) {
+          alert('Submission Error. Please try again.');
+          btn.disabled = false;
+          btn.innerHTML = `<span>SUBMIT</span> <i class="fa-solid fa-paper-plane text-sm opacity-70"></i>`;
+        }
+      };
+    });
+  </script>
+</body>
+</html>
