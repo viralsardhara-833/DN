@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gurutattva - Dhyansthali Navsari Registration</title>
+  <title>Gurutattva - Registration</title>
 
   <!-- Tailwind CSS & Icons -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
-  <!-- Google Fonts: Heritage Serif & Modern Sans -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <style>
     :root {
       --brand-brown: #6b5a3e;
       --brand-blue: #8ecae6;
-      --brand-orange: #d35400;
     }
 
     body { 
@@ -29,160 +28,171 @@
 
     .serif-title { font-family: 'Cinzel', serif; }
 
-    /* Main Unified Container: 30% Transparency */
+    /* Unified Box - 30% Transparency */
     .main-unified-box {
-      background: rgba(255, 255, 255, 0.3); /* 30% Transparent */
-      backdrop-filter: blur(15px); /* Strong blur for readability */
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      background: rgba(255, 255, 255, 0.3); 
+      backdrop-filter: blur(20px); 
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.5);
     }
 
-    /* Inner Cards: Slightly more opaque for input clarity */
+    /* Form Cards */
     .inner-card {
-      background: rgba(255, 255, 255, 0.7); 
+      background: rgba(255, 255, 255, 0.8); 
       border-radius: 24px;
       border: 1px solid rgba(255, 255, 255, 0.5);
-      transition: transform 0.3s ease;
     }
 
     .input-wrapper {
-      background: rgba(255, 255, 255, 0.9);
-      border: 1.5px solid #e5e7eb;
-      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1.5px solid #e2e8f0;
+      border-radius: 14px;
       transition: all 0.3s ease;
     }
     .input-wrapper:focus-within {
       border-color: var(--brand-brown);
-      background: #ffffff;
-      box-shadow: 0 0 0 4px rgba(107, 90, 62, 0.1);
+      box-shadow: 0 0 0 4px rgba(107, 90, 62, 0.15);
     }
 
     .field-label {
       font-size: 10px;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: #71717a;
-      margin-bottom: 4px;
+      letter-spacing: 0.12em;
+      color: #374151;
+      margin-bottom: 6px;
     }
 
     .btn-submit {
       background: var(--brand-brown);
-      transition: all 0.3s ease;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
     .btn-submit:hover {
       background: #4a3f2d;
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    }
+
+    /* Responsive adjustments for Laptop vs Mobile */
+    @media (min-width: 1024px) {
+      .main-unified-box {
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
     }
   </style>
 </head>
-<body class="min-h-screen py-10 px-4 flex justify-center items-start">
+<body class="min-h-screen flex justify-center items-center p-4 sm:p-8">
 
   <!-- THE SINGLE UNIFIED BOX -->
-  <div class="main-unified-box w-full max-w-3xl rounded-[3rem] overflow-hidden flex flex-col">
+  <div class="main-unified-box w-full max-w-4xl rounded-[3rem] sm:rounded-[4rem] overflow-hidden flex flex-col">
     
-    <!-- 1. Header Section -->
-    <header class="p-8 sm:p-12 flex flex-col sm:flex-row items-center gap-8 border-b border-white/20">
-      <img src="logo.png" alt="Logo" class="h-24 w-auto drop-shadow-md">
-      <div class="text-center sm:text-left">
-        <h1 class="serif-title text-3xl font-bold tracking-tight text-[#2d271e]">Dhyansthali Navsari</h1>
-        <p class="text-xs font-bold text-stone-700 uppercase tracking-[0.2em] mt-2">
-          A Meditation Sanctuary <span class="text-[#5ba4c4] mx-1">|</span> Arabian Sea 🌊
-        </p>
-      </div>
+    <!-- Header Section -->
+    <header class="p-8 sm:p-16 flex flex-col items-center justify-center border-b border-white/30 text-center">
+      <img src="logo.png" alt="Logo" class="h-24 sm:h-36 w-auto drop-shadow-2xl mb-6 transition-all hover:scale-105">
+      <p class="text-xs sm:text-lg font-bold text-stone-900 tracking-widest italic leading-snug">
+        A Meditation Sanctuary | Arabian Sea 🌊
+      </p>
     </header>
 
-    <!-- 2. Form Section -->
-    <main class="p-6 sm:p-10 flex-1">
-      <form id="registrationForm" class="space-y-8">
+    <!-- Form Section -->
+    <main class="p-6 sm:p-14 flex-1">
+      <form id="registrationForm" class="space-y-10">
         
-        <!-- Date Card -->
-        <div class="inner-card p-6">
+        <!-- Visit Date -->
+        <div class="inner-card p-6 sm:p-10">
           <div class="field-label">Planned Visit Date</div>
-          <div class="input-wrapper px-4 py-3">
-            <input type="date" id="visitDate" required class="w-full bg-transparent outline-none text-stone-800 font-semibold">
+          <div class="input-wrapper px-4 py-4">
+            <input type="date" id="visitDate" required class="w-full bg-transparent outline-none text-stone-900 font-bold text-lg">
           </div>
         </div>
 
-        <!-- Visitor 1 -->
-        <div class="inner-card p-6 border-l-4 border-[#6b5a3e]">
-          <div class="flex items-center gap-3 mb-6">
-            <div class="h-8 w-8 rounded-full bg-[#6b5a3e] text-white flex items-center justify-center font-bold text-sm">1</div>
-            <h3 class="serif-title font-bold text-stone-800">Primary Visitor</h3>
+        <!-- Primary Visitor -->
+        <div class="inner-card p-6 sm:p-10 border-l-[10px] border-[#6b5a3e]">
+          <div class="flex items-center gap-4 mb-10">
+            <div class="h-10 w-10 rounded-full bg-[#6b5a3e] text-white flex items-center justify-center font-bold text-lg shadow-lg">1</div>
+            <h3 class="serif-title text-xl sm:text-2xl font-bold text-stone-900 tracking-tight">Primary Visitor</h3>
           </div>
 
-          <div class="grid grid-cols-1 gap-5">
-            <div>
-              <div class="field-label">Mobile Number</div>
-              <div class="flex gap-2">
-                <div class="flex items-center gap-2 px-3 py-3 input-wrapper">
-                  <img src="https://flagcdn.com/w40/in.png" class="w-5 shadow-sm">
-                  <span class="font-bold text-stone-500 text-sm">+91</span>
-                </div>
-                <div class="input-wrapper flex-1 px-4 py-3">
-                  <input type="tel" id="phone" placeholder="Mobile Number" required class="w-full bg-transparent outline-none">
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div class="field-label">Full Name</div>
-              <div class="input-wrapper px-4 py-3">
-                <input type="text" id="fullName" placeholder="Full name as per ID" required class="w-full bg-transparent outline-none">
-              </div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div class="grid grid-cols-1 gap-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div>
-                <div class="field-label">Email</div>
-                <div class="input-wrapper px-4 py-3">
-                  <input type="email" id="email" placeholder="email@address.com" required class="w-full bg-transparent outline-none">
+                <div class="field-label">Mobile Number</div>
+                <div class="flex gap-3">
+                  <div class="flex items-center gap-2 px-4 py-4 input-wrapper bg-stone-100/50">
+                    <img src="https://flagcdn.com/w40/in.png" class="w-6 shadow-sm">
+                    <span class="font-bold text-stone-700">+91</span>
+                  </div>
+                  <div class="input-wrapper flex-1 px-5 py-4">
+                    <input type="tel" id="phone" placeholder="Phone Number" required class="w-full bg-transparent outline-none text-stone-900 font-medium">
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="field-label">Full Name</div>
+                <div class="input-wrapper px-5 py-4">
+                  <input type="text" id="fullName" placeholder="Your Full Name" required class="w-full bg-transparent outline-none text-stone-900 font-medium">
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div>
+                <div class="field-label">Email Address</div>
+                <div class="input-wrapper px-5 py-4">
+                  <input type="email" id="email" placeholder="email@gmail.com" required class="w-full bg-transparent outline-none text-stone-900 font-medium">
                 </div>
               </div>
               <div>
                 <div class="field-label">Age</div>
-                <div class="input-wrapper px-4 py-3">
-                  <input type="number" id="age" placeholder="Age" required class="w-full bg-transparent outline-none">
+                <div class="input-wrapper px-5 py-4">
+                  <input type="number" id="age" placeholder="Your Age" required class="w-full bg-transparent outline-none text-stone-900 font-medium">
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Additional Members Container -->
-        <div id="membersContainer" class="space-y-6"></div>
+        <!-- Members -->
+        <div id="membersContainer" class="space-y-10"></div>
 
         <!-- Add Button -->
-        <button type="button" id="addMemberBtn" class="w-full py-4 rounded-2xl border-2 border-dashed border-white/60 text-stone-800 font-bold text-sm flex items-center justify-center gap-2 hover:bg-white/20 transition-all">
-          <i class="fa-solid fa-plus-circle"></i> Add Family Member
+        <button type="button" id="addMemberBtn" class="w-full py-5 rounded-[2rem] border-2 border-dashed border-white/80 text-stone-900 font-black text-xs uppercase tracking-[0.3em] flex items-center justify-center gap-3 hover:bg-white/40 transition-all">
+          <i class="fa-solid fa-plus-circle text-xl"></i> Add Family Member
         </button>
 
         <!-- Submit Button -->
-        <button type="submit" id="submitBtn" class="btn-submit w-full py-5 text-white font-bold text-lg rounded-2xl flex items-center justify-center gap-3 mt-10">
+        <button type="submit" id="submitBtn" class="btn-submit w-full py-6 text-white font-black text-xl rounded-[2.5rem] flex items-center justify-center gap-4 mt-14 shadow-2xl tracking-[0.4em]">
           <span>SUBMIT</span>
-          <i class="fa-solid fa-paper-plane text-sm opacity-70"></i>
+          <i class="fa-solid fa-paper-plane text-lg opacity-80"></i>
         </button>
       </form>
     </main>
 
-    <!-- 3. Footer Section -->
-    <footer class="bg-black/20 p-10 text-white border-t border-white/10">
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-        <div>
-          <h4 class="serif-title text-xs font-bold text-[#8ecae6] tracking-[0.2em] mb-3">Location</h4>
-          <p class="text-xs leading-relaxed text-stone-200">
+    <!-- Footer Section (High Contrast Visibility) -->
+    <footer class="bg-black/70 p-10 sm:p-16 text-white border-t border-white/20">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div class="space-y-4">
+          <h4 class="serif-title text-sm font-black text-[#8ecae6] tracking-[0.3em] uppercase">Location</h4>
+          <p class="text-base leading-relaxed text-stone-100 font-medium max-w-sm">
             Samarpan Ashram Marg, Dandi-Onjal Road,<br>
             Dandi, Gujarat 396412.
           </p>
         </div>
-        <div>
-          <h4 class="serif-title text-xs font-bold text-[#8ecae6] tracking-[0.2em] mb-3">Connect</h4>
-          <div class="text-xs space-y-2 text-stone-200 font-medium">
-            <p><i class="fa-solid fa-phone-volume mr-2 text-[#8ecae6]"></i> 9824330246</p>
-            <p><i class="fa-solid fa-envelope mr-2 text-[#8ecae6]"></i> dhyansthalinavsari@gmail.com</p>
+        <div class="space-y-6">
+          <h4 class="serif-title text-sm font-black text-[#8ecae6] tracking-[0.3em] uppercase">Connect</h4>
+          <div class="space-y-4">
+            <a href="tel:9824330246" class="flex items-center gap-4 text-lg font-bold hover:text-[#8ecae6] transition-colors">
+              <i class="fa-solid fa-phone-volume text-[#8ecae6]"></i> 9824330246
+            </a>
+            <a href="mailto:dhyansthalinavsari@gmail.com" class="flex items-center gap-4 text-lg font-bold hover:text-[#8ecae6] transition-colors">
+              <i class="fa-solid fa-envelope-open-text text-[#8ecae6]"></i> dhyansthalinavsari@gmail.com
+            </a>
           </div>
         </div>
+      </div>
+      <div class="mt-12 pt-8 border-t border-white/10 text-center">
+        <p class="text-[10px] text-stone-400 font-bold uppercase tracking-[0.5em]">Gurutattva • Spiritual Sanctuary</p>
       </div>
     </footer>
 
@@ -196,50 +206,48 @@
       const container = document.getElementById('membersContainer');
       let memberCount = 1;
 
-      // Handle Visit Date (Min: Tomorrow)
+      // Set min date
       const dateInp = document.getElementById('visitDate');
       const tmrw = new Date();
       tmrw.setDate(tmrw.getDate() + 1);
       dateInp.min = tmrw.toISOString().split('T')[0];
 
-      // Dynamic Card Creation
       addBtn.onclick = () => {
         memberCount++;
         const div = document.createElement('div');
-        div.className = "inner-card p-6 relative animate-in fade-in slide-in-from-top-4 duration-300";
+        div.className = "inner-card p-6 sm:p-10 relative animate-in fade-in slide-in-from-top-4 duration-300";
         div.innerHTML = `
-          <button type="button" onclick="this.parentElement.remove()" class="absolute top-4 right-4 text-stone-400 hover:text-rose-500">
-            <i class="fa-solid fa-circle-xmark text-xl"></i>
+          <button type="button" onclick="this.parentElement.remove()" class="absolute top-6 right-6 text-stone-400 hover:text-rose-600 transition-all">
+            <i class="fa-solid fa-circle-xmark text-3xl"></i>
           </button>
-          <div class="flex items-center gap-3 mb-6">
-            <div class="h-8 w-8 rounded-full bg-stone-200 text-stone-600 flex items-center justify-center font-bold text-sm">${memberCount}</div>
-            <h3 class="serif-title font-bold text-stone-800">Visitor ${memberCount}</h3>
+          <div class="flex items-center gap-4 mb-10">
+            <div class="h-10 w-10 rounded-full bg-stone-200 text-stone-700 flex items-center justify-center font-bold text-lg shadow-inner">${memberCount}</div>
+            <h3 class="serif-title font-bold text-stone-900 text-xl">Visitor ${memberCount}</h3>
           </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-             <div class="sm:col-span-2">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+             <div class="lg:col-span-1">
                 <div class="field-label">Full Name</div>
-                <div class="input-wrapper px-4 py-3"><input type="text" placeholder="Visitor Name" required class="w-full bg-transparent outline-none"></div>
+                <div class="input-wrapper px-5 py-4"><input type="text" placeholder="Name" required class="w-full bg-transparent outline-none"></div>
              </div>
              <div>
                 <div class="field-label">Mobile</div>
-                <div class="input-wrapper px-4 py-3"><input type="tel" placeholder="Mobile" required class="w-full bg-transparent outline-none"></div>
+                <div class="input-wrapper px-5 py-4"><input type="tel" placeholder="Mobile" required class="w-full bg-transparent outline-none"></div>
              </div>
              <div>
                 <div class="field-label">Age</div>
-                <div class="input-wrapper px-4 py-3"><input type="number" placeholder="Age" required class="w-full bg-transparent outline-none"></div>
+                <div class="input-wrapper px-5 py-4"><input type="number" placeholder="Age" required class="w-full bg-transparent outline-none"></div>
              </div>
           </div>
         `;
         container.appendChild(div);
       };
 
-      // Form Handling
       const form = document.getElementById('registrationForm');
       form.onsubmit = async (e) => {
         e.preventDefault();
         const btn = document.getElementById('submitBtn');
         btn.disabled = true;
-        btn.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i> Submitting...`;
+        btn.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i> Processing...`;
 
         const members = Array.from(container.children).map(card => {
           const inps = card.querySelectorAll('input');
@@ -260,9 +268,9 @@
           alert('Registration Successful!');
           window.location.reload();
         } catch (err) {
-          alert('Submission Error. Please try again.');
+          alert('Submission Error. Check your connection.');
           btn.disabled = false;
-          btn.innerHTML = `<span>SUBMIT</span> <i class="fa-solid fa-paper-plane text-sm opacity-70"></i>`;
+          btn.innerHTML = `<span>SUBMIT</span> <i class="fa-solid fa-paper-plane text-lg"></i>`;
         }
       };
     });
