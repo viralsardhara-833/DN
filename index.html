@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Gurutattva - Registration</title>
+  <title>Gurutattva - Visitor Registration</title>
 
   <!-- Tailwind CSS & Icons -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -83,7 +83,7 @@
   <!-- THE MAIN CONTAINER -->
   <div class="main-unified-box w-full max-w-3xl rounded-[2.5rem] sm:rounded-[4rem] overflow-hidden flex flex-col">
     
-    <!-- Header Section (Only Logo and Tagline Centered) -->
+    <!-- Header Section (Logo and Tagline Centered) -->
     <header class="p-8 sm:p-14 flex flex-col items-center justify-center border-b border-white/20 text-center">
       <img src="logo.png" alt="Logo" class="h-24 sm:h-32 w-auto mb-6 drop-shadow-2xl">
       <p class="text-xs sm:text-base font-bold text-stone-800 tracking-wide italic">
@@ -93,6 +93,15 @@
 
     <!-- Form Section -->
     <main class="p-4 sm:p-12 flex-1 space-y-8 sm:space-y-10">
+      
+      <!-- New Visit Registration Title -->
+      <div class="text-center mb-6">
+        <h2 class="serif-title text-2xl sm:text-3xl font-bold text-[#2d271e] uppercase tracking-widest">
+          Visitor Registration
+        </h2>
+        <div class="h-1 w-20 bg-[#6b5a3e] mx-auto mt-3 rounded-full opacity-40"></div>
+      </div>
+
       <form id="registrationForm" class="space-y-8 sm:space-y-10">
         
         <!-- Visit Date Card -->
@@ -148,7 +157,7 @@
         <div id="membersContainer" class="space-y-6 sm:space-y-10"></div>
 
         <!-- Add Button -->
-        <button type="button" id="addMemberBtn" class="w-full py-4 rounded-2xl border-2 border-dashed border-white/60 text-stone-800 font-bold text-[10px] sm:text-xs uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-white/40 transition-all">
+        <button type="button" id="addMemberBtn" class="w-full py-4 rounded-2xl border-2 border-dashed border-white/60 text-stone-800 font-bold text-[10px] sm:text-xs uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-white/20 transition-all">
           <i class="fa-solid fa-plus-circle text-lg"></i> Add Family Member
         </button>
 
